@@ -10,5 +10,5 @@ export interface FighterData {
   series: string;
   characterData: GotCharacterData;
   weapon: string;
-  dexterity: string;
+  dexterity: number;
 }
