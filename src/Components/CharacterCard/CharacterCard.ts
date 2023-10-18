@@ -4,13 +4,8 @@ import Component from "../Component/Component.js";
 class CharacterCard extends Component {
   characterData;
 
-  constructor(
-    parentElement: Element,
-    tagName: string,
-    className: string,
-    characterData: GotCharacterData,
-  ) {
-    super(parentElement, tagName, className);
+  constructor(parentElement: Element, characterData: GotCharacterData) {
+    super(parentElement, "li", "col");
     this.characterData = characterData;
   }
 
@@ -18,7 +13,7 @@ class CharacterCard extends Component {
     this.element.innerHTML = `
          <article class="character">
           <div class="card character__card">
-            <img src="${this.characterData.imageURL}" alt="${this.characterData.name},${this.characterData.family}" class="character__picture card-img-top" />
+            <img src="img/${this.characterData.imageSource}" alt="${this.characterData.name},${this.characterData.family}" class="character__picture card-img-top" />
             <div class="card-body">
               <h2 class="character__name card-title h4">${this.characterData.family}</h2>
               <div class="character__info">

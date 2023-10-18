@@ -1,19 +1,19 @@
 import { Character } from "../Character/Character.js";
 import { Fighter } from "../Fighter/Fighter.js";
-import { type SquireData } from "../types.js";
+import { type GotCharacterData } from "../types.js";
 
 export class Squire extends Character {
-  squire: SquireData;
-  kissAssLevel;
-  serves;
-
-  constructor(data: SquireData) {
+  constructor(
+    data: GotCharacterData,
+    protected serves: Character,
+    protected kissAssLevel: number,
+  ) {
     super(data);
-    this.kissAssLevel = this.kissAssLevelFilter(data.kissAssLevel);
-    this.serves = data.serves;
+    this.kissAssLevel = this.kissAssLevelFilter(kissAssLevel);
+    this.serves = serves;
 
     if (Squire instanceof Fighter) {
-      this.serves = data.serves;
+      this.serves = serves;
     }
   }
 

@@ -2,7 +2,7 @@ export interface GotCharacterData {
   name: string;
   family: string;
   age: number;
-  imageURL: string;
+  imageSource: string;
 }
 
 export interface FighterData extends GotCharacterData {
