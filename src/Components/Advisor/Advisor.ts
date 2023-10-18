@@ -2,9 +2,10 @@ import { Character } from "../Character/Character.js";
 import { type GotCharacterData } from "../types.js";
 
 export class Advisor extends Character {
-  advises: GotCharacterData;
-
-  constructor(characterData: GotCharacterData, advises: GotCharacterData) {
+  constructor(
+    characterData: GotCharacterData,
+    protected advises: Character,
+  ) {
     super(characterData);
 
     if (advises instanceof Character) {
